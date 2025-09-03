@@ -25,7 +25,7 @@ namespace Domain.Entities.Identity
         Platinum,
         Gold
     };
-    public class User:IdentityUser
+    public class User:IdentityUser<Guid>
     {
         [Required]
         public CaseCategory Case_Category { get; set; }

@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Identity
 {
-    public class Address(string Country,string Gov,string City, string Street,string BuildingNo)
+    public class Address()
     {
+        public string Country { get; set; }
+        public string Gov { get; set; }
+        public string City { get; set; }
 
+        public string Street {get; set; }
+        public string BuildingNo {get; set; }
     }
 }

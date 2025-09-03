@@ -1,3 +1,8 @@
+using Domain.Entities.Identity;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Presistence.Data;
+
 namespace Mo3een
 {
     public class Program
@@ -11,6 +16,14 @@ namespace Mo3een
             builder.Services.AddControllers();
             // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
             builder.Services.AddOpenApi();
+            builder.Services.AddDbContext<Mo3enContext>();
+            builder.Services.AddIdentity<User, IdentityRole>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Password.RequireDigit = true;
+                options.Password.RequireUppercase= true;
+                options.Password.RequireLowercase= true;
+            }).AddEntityFrameworkStores<Mo3enContext>();
 
             var app = builder.Build();
 
