@@ -1,0 +1,6 @@
+@Mo3een_HostAddress = http://localhost:5090
+
+GET {{Mo3een_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
