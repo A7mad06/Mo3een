@@ -38,7 +38,7 @@ namespace Domain.Entities.Identity
 
         public Plan Plan { get; set; } = Plan.Free;
 
-        public List<Address> Addresses { get; set; } = new List<Address>();
+        public ICollection<Address> Addresses { get; set; } = new HashSet<Address>();
 
         [DataType(DataType.Url)]
         public string PictureUrl { get; set; } = null!;
